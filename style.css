@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #ffffff;
+    font-family: spotify-circular,
+        spotify-circular-cyrillic,
+        spotify-circular-arabic,
+        spotify-circular-hebrew,
+        "Helvetica Neue",
+        helvetica,
+        arial,
+        "Hiragino Kaku Gothic Pro",
+        Meiryo,
+        "MS Gothic",
+        sans-serif,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+*::-webkit-scrollbar {
+    width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #77777729;
+    border-radius: 10px;
+    border: 0;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #77777751;
+}
+h5 {
+    margin: 0;
+    font-weight: 600;
+    /* font-size: 16px; */
+    line-height: 25.6px;
+}
+
+h6 {
+    font-weight: 600;
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    outline: none;
+}
+
+.sidebar {
+    /* position: fixed; */
+    background: #000000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: 550;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.spotify-logo {
+    width: 130px;
+
+}
+
+.sidebar-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.active {
+    color: #b20000 !important;
+}
+
+.sidebar-items li {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #777777;
+}
+
+.active li {
+    color: #ffffff;
+}
+
+.sidebar-items a:hover>li,
+.sidebar-items a:hover>img {
+    transition: 200ms ease-in-out;
+    color: #ffffff;
+    stroke: #ffffff;
+
+}
+
+.playlist-icon {
+    background-color: #fffbfbaa;
+    width: max-content;
+    padding: 6px;
+    border-radius: 2px;
+}
+
+.liked-icon {
+    background-color: #9397e3b4;
+    width: max-content;
+    padding: 6px;
+    border-radius: 2px;
+}
+
+.sidebar-footer {
+    justify-self: flex-start ;
+}
+
+.sidebar-footer ul li {
+    color: #777777;
+    margin-top: 14px;
+    ;
+    font-size: 11px;
+}
+
+.sidebar-footer ul li:hover {
+    transition: 200ms ease-in-out;
+    width: max-content;
+    border-bottom: 1px solid #777777;
+}
+
+header {
+    background-color: #101010;
+    height: 10vh;
+    z-index: 10000;
+    /* height: fit-content; */
+    display: flex;
+    justify-content: space-between;
+}
+
+header span {
+    color: #bfbfbf;
+    font-weight: 600;
+}
+
+header button {
+    color: #000000;
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+header button:hover,
+header img:hover {
+    transition: 200ms ease-in-out;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+header span:hover {
+    transition: 200ms ease-in-out;
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+main {
+    height: 90vh;
+    width: 100%;
+    overflow-y: auto !important;
+    background-color: #1D1D1D;
+    padding-bottom: 10vh !important;
+}
+
+.carousel-container {
+    /* display: flex; */
+    overflow-x: hidden;
+    position: relative;
+    scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100px);
+        scroll-snap-type: y mandatory;
+}
+
+.carousel-container button {
+    display: flex;
+    border-radius: 50%;
+    padding: 0.2rem;
+    transition: all 300ms ease-in;
+    position: absolute;
+    z-index: 100;
+}
+
+.prev-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-container button:hover {
+    box-shadow: 0 0 5px 1px #ffffff6b;
+    background-color: #1FDF64;
+}
+
+.carousel-list {
+    display: flex;
+    gap: 2rem;
+    /* overflow-x: auto; */
+    transition: all .5s ease-in;
+    scroll-behavior: smooth;
+}
+.snaps-inline{
+    scroll-snap-type: x mandatory;
+}
+.snaps-inline > *{
+    scroll-snap-align: start;
+}
+.carousel-list li {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.card {
+    background-color: #181818;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transition: 20ms ease-in-out;
+    background-color: #282828;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.card:hover>.card-image-container::after {
+    display: flex;
+}
+
+.card img {
+    position: relative;
+    border-radius: 12px;
+}
+
+.card-image-container::after {
+    display: none;
+    content: url("./svgs/play_logo.svg");
+    background-color: #1FDF64;
+    position: absolute;
+    z-index: 288;
+    bottom: 120px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+}
+
+.card-text {
+    font-size: 0.8rem;
+    color: #a7a7a7;
+}
+.mobile-footer{
+position: fixed;
+bottom: 0;
+z-index: 1000;
+width: 100%;
+background-color: #101010;
+}
+.mobile-footer ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.mobile-footer ul li:hover{
+    cursor: pointer;
+}

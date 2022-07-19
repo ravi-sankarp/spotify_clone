@@ -274,18 +274,15 @@ main {
     font-size: 0.8rem;
     color: #a7a7a7;
 }
-.mobile-footer{
-position: fixed;
-bottom: 0;
-z-index: 1000;
-width: 100%;
-background-color: #101010;
+
+.md-sidebar .offcanvas {
+    background: #101010 !important;
+    width: 100%;
 }
-.mobile-footer ul{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+ .btn-close-sidebar{
+    background: none !important;
 }
-.mobile-footer ul li:hover{
-    cursor: pointer;
+.btn-close-sidebar .bi-x{
+    fill: #ffffff !important;
+    font-size: 2rem;
 }
